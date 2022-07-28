@@ -1,19 +1,19 @@
-
+#importing blender toolkit and json
 import bpy
 from json import load
+
+#initailizations
 original_json=open(r"C:\Users\HP\Desktop\blender_python\Drome.json")
 dict_json=load(original_json)
 list_actions=list(dict_json.keys())
 n=len(list(dict_json.keys()))
+
+#selecting an existing camera Variable
 cam=bpy.data.collections[0].objects[2]
-def p(i):
-    bpy.ops.screen.animation_play()#start animation
-    # cam.rotation_euler=[1,1,1]
-    # cam.keyframe_insert(data_path="rotation_euler",frame=1)
-    # cam.rotation_euler=[2,2,2]
-    # cam.keyframe_insert(data_path="rotation_euler",frame=50)
-    # cam.rotation_euler=[3,3,3]
-    # cam.keyframe_insert(data_path="rotation_euler",frame=100)
+
+##markFrames -- mark the frames accoording to parameters defined in json file
+def markFrames(i):
+    bpy.ops.screen.animation_play()             #start animation
     if list_actions[i]=='X_velocity':
         cam.location[0]=int(dict_json[list_actions[i]])
         cam.keyframe_insert(data_path="location",frame=(i+1)*24)
@@ -38,8 +38,7 @@ def p(i):
         cam.rotation_euler[2]=float(dict_json[list_actions[i]])
         cam.keyframe_insert(data_path="rotation_euler",frame=(i+1)*24)
         print("r")
+
+#To create animation
 for i in range(n):
-    p(i)
-#print(n)
-#print(list_actions)
-#print(dict_json)
+    markFrames(i)
