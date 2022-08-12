@@ -1,0 +1,33 @@
+{
+	"velocities":[{
+		"X-val": 10,
+		"Y-val": 3,
+		"Z-val" : 2,
+		"Roll" : 4,
+		"Yaw" : 5,
+		"Pitch" : 5,
+		"Gimbleroll" : 0,
+		"Planar_roll" : 0
+	},
+	{
+		"X-val" : 56,
+		"Y-val" : 45,
+		"Z-val" : 10,
+		"Roll" : 45,
+		"Yaw" : 34,
+		"Pitch" : 6,
+		"Gimbleroll" : 90,
+		"Planar_roll" : 90
+	},
+	{
+		"X-val" : 34,
+		"Y-val" : 23,
+		"Z-val" : 24,
+		"Roll" : 35,
+		"Yaw" : 5,
+		"Pitch" : 6,
+		"Gimbleroll" : 4,
+		"Planar_roll" : 34
+	}]
+
+}
